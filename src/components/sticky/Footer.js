@@ -18,7 +18,7 @@ import Image from "next/image";
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
-      {"Rishtey © "}
+      {"Optimus Detailing © "}
       <Link href="https://bazarnear.com/" color="inherit">
         Copyright&nbsp;
       </Link>
@@ -51,12 +51,7 @@ export default function Footer() {
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Box sx={{ ml: { xs: 12, sm: 0 } }}>
-            <Image
-              src="/logo.png"
-              alt="BazarNear Logo"
-              width={130}
-              height={50}
-            />
+            <Image src="/logo.jpg" alt=" Logo" width={50} height={50} />
           </Box>
           <Typography
             variant="body2"
@@ -64,8 +59,8 @@ export default function Footer() {
             mt={1}
             sx={{ maxWidth: { sm: 230 } }}
           >
-            Rishtey connects people to build meaningful relationships and
-            lasting memories.
+            Innovative techniques at Optimus guarantee a spotless,
+            showroom-quality shine
           </Typography>
           {/* <Stack direction="row" spacing={1} useFlexGap>
             <TextField

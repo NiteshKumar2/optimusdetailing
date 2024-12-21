@@ -4,24 +4,14 @@ import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Box,
-  Button,
   CardMedia,
   Container,
   Toolbar,
-  Stack,
-  IconButton,
-  Menu,
-  MenuItem,
-  Typography,
   ThemeProvider,
   createTheme,
+  Button,
 } from "@mui/material";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import Link from "next/link";
-import LoginPopup from "./LoginPopup";
-import SignupPopup from "./SignupPopup";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import StoreIcon from "@mui/icons-material/Store";
 
 const theme = createTheme({
   palette: {
@@ -38,26 +28,14 @@ const theme = createTheme({
 });
 
 export default function Navbar() {
-  const { data: session } = useState(false); // Placeholder for session data
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [openLoginPopup, setOpenLoginPopup] = useState(false);
-  const [openSignupPopup, setOpenSignupPopup] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
+  const phoneNumber = "+918813911571"; // Replace with your phone number (include country code, e.g., '911234567890' for India)
+  const message = "Hello, I would like to inquire about your services."; // Optional pre-filled message
 
-  const handleMenu = (event) => setAnchorEl(event.currentTarget);
-  const handleClose = () => setAnchorEl(null);
-
-  const handleOpenLoginPopup = () => {
-    setOpenLoginPopup(true);
-    setAnchorEl(null);
-  };
-
-  const handleCloseLoginPopup = () => setOpenLoginPopup(false);
-  const handleOpenSignupPopup = () => setOpenSignupPopup(true);
-  const handleCloseSignupPopup = () => setOpenSignupPopup(false);
-  const handleOpenLoginFromSignup = () => {
-    setOpenSignupPopup(false);
-    setOpenLoginPopup(true);
+  const handleClick = () => {
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   useEffect(() => {
@@ -100,11 +78,11 @@ export default function Navbar() {
                 <CardMedia
                   component="img"
                   sx={{
-                    width: { xs: 90, sm: 110 },
+                    width: { xs: 30, sm: 40 },
                     cursor: "pointer",
                     height: "auto",
                   }}
-                  src="/logo.png"
+                  src="/logo.jpg"
                   alt="Logo"
                 />
               </Link>
@@ -112,98 +90,20 @@ export default function Navbar() {
 
             {/* Center: Location Search */}
 
-            <Typography
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                flexGrow: 1,
-                color: "GrayText",
-              }}
-            >
-              <Link href="/myprofile">My profile</Link>
-            </Typography>
-            <Typography
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                flexGrow: 1,
-                color: "GrayText",
-              }}
-            >
-              Match
-            </Typography>
-            <Typography
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                flexGrow: 1,
-                color: "GrayText",
-              }}
-            ><Link href="/search">Search</Link>
-              
-            </Typography>
-
             {/* Right: Login and Signup Buttons */}
             <Box
               sx={{
-                display: { xs: "none", sm: "flex" },
+                display: { sm: "flex" },
                 alignItems: "center",
               }}
             >
-              <Stack direction="row" spacing={2}>
-                {session ? (
-                  <>
-                    <Link href={"/createshop"}>
-                      <Typography sx={{ color: "#fd3031", mt: 1 }}>
-                        <PersonAddIcon />
-                        <StoreIcon />
-                      </Typography>
-                    </Link>
-                    <Button
-                      variant="text"
-                      sx={{ color: "#fd3031" }}
-                      onClick={() => signOut()}
-                    >
-                      Log out
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <Button
-                      variant="text"
-                      sx={{ color: "#fd3031" }}
-                      onClick={handleOpenLoginPopup}
-                    >
-                      Log in
-                    </Button>
-                    <Button
-                      variant="text"
-                      sx={{ color: "#fd3031" }}
-                      onClick={handleOpenSignupPopup}
-                    >
-                      Sign up
-                    </Button>
-                  </>
-                )}
-              </Stack>
+              <Button color="inherit" variant="text" onClick={handleClick}>
+                {" "}
+                Contact Us{" "}
+              </Button>
             </Box>
           </Toolbar>
         </Container>
-
-        {/* Login and Signup Popups */}
-        <LoginPopup
-          open={openLoginPopup}
-          onClose={handleCloseLoginPopup}
-          handleOpenSignupPopup={handleOpenSignupPopup}
-        />
-        <SignupPopup
-          open={openSignupPopup}
-          onClose={handleCloseSignupPopup}
-          handleOpenLoginFromSignup={handleOpenLoginFromSignup}
-        />
       </AppBar>
     </ThemeProvider>
   );
