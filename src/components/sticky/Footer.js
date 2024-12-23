@@ -14,12 +14,13 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Image from "next/image";
+import { Instagram, YouTube } from "@mui/icons-material";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {"Optimus Detailing © "}
-      <Link href="https://bazarnear.com/" color="inherit">
+      <Link href="/" color="inherit">
         Copyright&nbsp;
       </Link>
       {new Date().getFullYear()}
@@ -86,14 +87,14 @@ export default function Footer() {
         <Box sx={{ display: { xs: "flex", sm: "contents", md: "contents" } }}>
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Typography variant="body2" fontWeight={600} mb={1}>
-              Product
+              Optimus Detailing
             </Typography>
             <Stack spacing={0.5}>
               <Link color="text.secondary" href="#">
-                Features
+                Services
               </Link>
               <Link color="text.secondary" href="#">
-                Testimonials
+                About Us
               </Link>
               <Link color="text.secondary" href="#">
                 Highlights
@@ -106,35 +107,34 @@ export default function Footer() {
 
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Typography variant="body2" fontWeight={600} mb={1}>
-              Company
+              Contact
             </Typography>
             <Stack spacing={0.5}>
               <Link color="text.secondary" href="#">
-                About us
+              +91 9879876655
               </Link>
               <Link color="text.secondary" href="#">
-                Careers
+                Mail
               </Link>
-              <Link color="text.secondary" href="#">
-                Press
+              <Link
+                color="text.secondary"
+                href="https://www.instagram.com/optimusdetailing_jind/"
+              >
+                Instagram
               </Link>
             </Stack>
           </Box>
 
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Typography variant="body2" fontWeight={600} mb={1}>
-              Legal
+              Address
             </Typography>
             <Stack spacing={0.5}>
               <Link color="text.secondary" href="#">
-                Terms
+                opposite Deep Palace, Shiv Colony, Urban Estate, Jind, Haryana
+                126102
               </Link>
-              <Link color="text.secondary" href="#">
-                Privacy
-              </Link>
-              <Link color="text.secondary" href="#">
-                Contact
-              </Link>
+              <Link color="text.secondary">Mon- Sun: 9am- 7pm</Link>
             </Stack>
           </Box>
         </Box>
@@ -163,7 +163,15 @@ export default function Footer() {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/bazarnear"
+            href="https://www.instagram.com/optimusdetailing_jind/"
+            aria-label="Instagram"
+            sx={{ alignSelf: "center" }}
+          >
+            <Instagram />
+          </IconButton>
+          <IconButton
+            color="inherit"
+            href="https://www.instagram.com/optimusdetailing_jind/"
             aria-label="GitHub"
             sx={{ alignSelf: "center" }}
           >
@@ -171,19 +179,11 @@ export default function Footer() {
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://twitter.com/bazarnear"
-            aria-label="Twitter"
+            href="https://www.youtube.com/@OptimusDetailingJind"
+            aria-label="Youtube"
             sx={{ alignSelf: "center" }}
           >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://www.linkedin.com/company/bazarnear/"
-            aria-label="LinkedIn"
-            sx={{ alignSelf: "center" }}
-          >
-            <LinkedInIcon />
+            <YouTube />
           </IconButton>
         </Stack>
       </Box>

@@ -97,9 +97,9 @@ export default function Navbar() {
                 alignItems: "center",
               }}
             >
-              <Button color="inherit" variant="text" onClick={handleClick}>
+              <Button color="success" variant="contained" onClick={handleClick}>
                 {" "}
-                Contact Us{" "}
+                Contact{" "}
               </Button>
             </Box>
           </Toolbar>

@@ -58,7 +58,7 @@ function LandingBanner() {
         <Typography
           component="h1"
           variant="h3"
-          color="inherit"
+          color="white"
           gutterBottom
           sx={{
             fontSize: {
@@ -75,7 +75,7 @@ function LandingBanner() {
 
         <Typography
           variant="h5"
-          color="inherit"
+          color="info"
           paragraph
           sx={{
             fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
@@ -87,7 +87,7 @@ function LandingBanner() {
           showroom-quality shine
         </Typography>
 
-        <Button color="warning" variant="contained" onClick={handleClick}>
+        <Button color="success" variant="contained" onClick={handleClick}>
           Let's connect
         </Button>
       </Box>
