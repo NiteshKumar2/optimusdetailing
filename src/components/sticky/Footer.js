@@ -51,7 +51,7 @@ export default function Footer() {
         }}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Box sx={{ ml: { xs: 12, sm: 0 } }}>
+          <Box sx={{ ml: { xs: 1, sm: 0 } }}>
             <Image src="/logo.jpg" alt=" Logo" width={50} height={50} />
           </Box>
           <Typography
