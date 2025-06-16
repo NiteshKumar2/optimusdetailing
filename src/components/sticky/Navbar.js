@@ -12,6 +12,7 @@ import {
   Button,
 } from "@mui/material";
 import Link from "next/link";
+import Image from "next/image";
 
 const theme = createTheme({
   palette: {
@@ -28,8 +29,8 @@ const theme = createTheme({
 });
 
 export default function Navbar() {
-  const [showNavbar, setShowNavbar] = useState(false);
-  const phoneNumber = "+918813911571"; // Replace with your phone number (include country code, e.g., '911234567890' for India)
+  const [showNavbar, setShowNavbar] = useState(true);
+  const phoneNumber = "+918295164888"; // Replace with your phone number (include country code, e.g., '911234567890' for India)
   const message = "Hello, I would like to inquire about your services."; // Optional pre-filled message
 
   const handleClick = () => {
@@ -40,7 +41,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 0) {
         setShowNavbar(true);
       } else {
         setShowNavbar(false);
@@ -97,9 +98,13 @@ export default function Navbar() {
                 alignItems: "center",
               }}
             >
-              <Button color="success" variant="contained" onClick={handleClick}>
-                {" "}
-                Contact{" "}
+              <Button variant="text" onClick={handleClick}>
+                <Image
+                  src="/whatsapp.png"
+                  alt="whatsapp"
+                  width={32}
+                  height={32}
+                />
               </Button>
             </Box>
           </Toolbar>

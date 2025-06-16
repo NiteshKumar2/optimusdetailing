@@ -50,10 +50,10 @@ export default function LandingAbout() {
             textAlign: { xs: "left", md: "left" },
           }}
         >
-          <Typography gutterBottom variant="h4" component="div" color="primary">
+          <Typography gutterBottom variant="h3" component="div" color="success">
             Our Founder
           </Typography>
-          <Typography variant="body1" color="text.secondary">
+          <Typography variant="h6" color="text.secondary">
             Sachin Boora, the founder of Optimus Detailing, is a trailblazer in
             the automotive care industry. Driven by a passion for cars and a
             commitment to excellence, he established Optimus Detailing as a

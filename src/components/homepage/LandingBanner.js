@@ -6,19 +6,19 @@ import Typography from "@mui/material/Typography";
 import { Button, Box } from "@mui/material";
 
 function LandingBanner() {
-  const phoneNumber = "+918813911571"; // Replace with your phone number (include country code, e.g., '911234567890' for India)
+  {/* 
+  const phoneNumber = "+918295164888"; // Replace with your phone number (include country code, e.g., '911234567890' for India)
   const message = "Hello, I would like to inquire about your services."; // Optional pre-filled message
 
   const handleClick = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
-  };
+  };*/}
   return (
     <Paper
       sx={{
         position: "relative",
-        backgroundColor: "grey.800",
         color: "#fff",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -28,10 +28,10 @@ function LandingBanner() {
         padding: 0,
         borderRadius: 0,
         height: {
-          xs: 480,
-          sm: 570,
-          md: 690,
-          lg: 690,
+          xs: 530,
+          sm: 620,
+          md: 740,
+          lg: 740,
         },
       }}
     >
@@ -41,10 +41,10 @@ function LandingBanner() {
           top: 0,
           bottom: 0,
           right: 0,
-          left: 0,
-          backgroundColor: "rgba(0,0,0,.3)",
+          left: 0
         }}
       />
+      {/*
       <Box
         sx={{
           display: "flex",
@@ -58,7 +58,7 @@ function LandingBanner() {
         <Typography
           component="h1"
           variant="h3"
-          color="white"
+          color="rgb(182 33 35)"
           gutterBottom
           sx={{
             fontSize: {
@@ -80,7 +80,7 @@ function LandingBanner() {
           sx={{
             fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
             margin: 2.5,
-            color: "white",
+            color: "#ea9c0c",
           }}
         >
           Innovative techniques at Optimus guarantee a spotless,
@@ -90,7 +90,7 @@ function LandingBanner() {
         <Button color="success" variant="contained" onClick={handleClick}>
           Let's connect
         </Button>
-      </Box>
+      </Box>*/}
     </Paper>
   );
 }

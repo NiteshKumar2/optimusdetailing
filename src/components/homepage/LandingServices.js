@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Card,
@@ -6,224 +7,119 @@ import {
   CardMedia,
   Container,
   CardActionArea,
-  Link,
   Stack,
+  Box,
 } from "@mui/material";
 
+const services = [
+  {
+    title: "Ceramic Coating",
+    description:
+      "Ceramic coating provides a durable, glossy layer that protects vehicles from scratches, UV damage, and contaminants. It enhances shine, repels water, and makes cleaning easier, ensuring long-lasting beauty and protection.",
+    image: "/ceramic.jpg",
+  },
+  {
+    title: "Car Wash",
+    description:
+      "A car wash cleans and rejuvenates vehicles by removing dirt, grime, and contaminants. It enhances the car's appearance, protects the paint, and maintains its value.",
+    image: "/wash.jpg",
+  },
+  {
+    title: "Steam Wash",
+    description:
+      "Steam wash is an eco-friendly method using high-temperature steam to remove dirt, grease, and bacteria from vehicles. It disinfects and protects without harsh chemicals.",
+    image: "/steam.jpg",
+  },
+  {
+    title: "Car Denting Painting",
+    description:
+      "Car denting and painting restore a vehicle's body by repairing dents and applying paint. It smooths surfaces, matches the original color, and enhances the vehicle's look.",
+    image: "/denting.jpg",
+  },
+  {
+    title: "Paint Protection Film",
+    description:
+      "Paint Protection Film (PPF) is a transparent, durable layer applied to a vehicle's surface. It protects against scratches, chips, and UV damage.",
+    image: "/protection.jpg",
+  },
+  {
+    title: "Ozone Treatment",
+    description:
+      "Ozone treatment removes odors, kills bacteria, and eliminates mold using ozone gas. It leaves a fresh, clean, and sanitized interior.",
+    image: "/ozone.jpg",
+  },
+];
+
 export default function LandingServices() {
+  const phoneNumber = "+918295164888";
+
+  const handleWhatsAppClick = (serviceName) => {
+    const message = `Hello, I would like to inquire about your services: ${serviceName}.`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
-    <Container sx={{ marginY: 10 }}>
+    <Container sx={{ py: { xs: 5, sm: 10 } }}>
       <Typography
-        variant="h4"
-        sx={{
-          textAlign: "center",
-          marginBottom: 10,
-        }}
+        variant="h3"
+        color="success.main"
+        textAlign="center"
+        mb={6}
+        fontWeight={400}
       >
         Our Services
       </Typography>
 
-      <Stack
-        spacing={4}
-        direction={{ xs: "column", sm: "row" }} // Stack items in column on small screens, row on larger screens
-        justifyContent="center"
-        alignItems="center" // Center items horizontally
-      >
-        <Link href="/" underline="none">
-          <Card sx={{ width: { xs: 320, sm: 360, md: 360 }, margin: "0 auto" }}>
-            {" "}
-            {/* Set width directly */}
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="220"
-                image="ceramic.jpg"
-                alt="Order Online"
-                style={{ borderRadius: "5px" }}
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="div"
-                  color="primary"
+      <Stack spacing={5}>
+        {[0, 1].map((rowIndex) => (
+          <Stack
+            key={rowIndex}
+            direction={{ xs: "column", sm: "row" }}
+            spacing={4}
+            justifyContent="center"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            {services.slice(rowIndex * 3, rowIndex * 3 + 3).map((service, i) => (
+              <Box key={i}>
+                <Card
+                  sx={{
+                    width: { xs: 320, sm: 360, md: 360 },
+                    mx: "auto",
+                    cursor: "pointer",
+                    borderRadius: 2,
+                    boxShadow: 3,
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.03)",
+                    },
+                  }}
+                  onClick={() => handleWhatsAppClick(service.title)}
                 >
-                  Ceramic Coating
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Ceramic coating provides a durable, glossy layer that protects
-                  vehicles from scratches, UV damage, and contaminants. It
-                  enhances shine, repels water, and makes cleaning easier,
-                  ensuring long-lasting beauty and protection.
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
-        <Link href="/" underline="none">
-          <Card sx={{ width: { xs: 320, sm: 380, md: 380 }, margin: "0 auto" }}>
-            {" "}
-            {/* Set width directly */}
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="220"
-                image="wash.jpg"
-                alt="Shop Review"
-                style={{ borderRadius: "5px" }}
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="div"
-                  color="primary"
-                >
-                  Car Wash
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  A car wash cleans and rejuvenates vehicles by removing dirt,
-                  grime, and contaminants. It enhances the car's appearance,
-                  protects the paint, and maintains its value, ensuring a fresh
-                  and polished look.
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
-        <Link href="/" underline="none">
-          <Card sx={{ width: { xs: 320, sm: 380, md: 380 }, margin: "0 auto" }}>
-            {" "}
-            {/* Set width directly */}
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="220"
-                image="steam.jpg"
-                alt="Night Shopping"
-                style={{ borderRadius: "5px" }}
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="div"
-                  color="primary"
-                >
-                  Steam Wash
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Steam wash is an eco-friendly cleaning method using
-                  high-temperature steam to remove dirt, grease, and bacteria
-                  from vehicles. It cleans thoroughly, disinfects, and protects
-                  surfaces without harsh chemicals.
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
-      </Stack>
-
-      <Stack
-        spacing={4}
-        direction={{ xs: "column", sm: "row" }} // Stack items in column on small screens, row on larger screens
-        mt={5}
-        justifyContent="center"
-        alignItems="center" // Center items horizontally
-      >
-        <Link href="/" underline="none">
-          <Card sx={{ width: { xs: 320, sm: 360, md: 360 }, margin: "0 auto" }}>
-            {" "}
-            {/* Set width directly */}
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="220"
-                image="denting.jpg"
-                alt="Order Online"
-                style={{ borderRadius: "5px" }}
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="div"
-                  color="primary"
-                >
-                  Car Denting Painting
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Car denting and painting restore a vehicle's damaged body by
-                  repairing dents and applying fresh paint. It ensures a smooth
-                  surface, matches the original color, and enhances the car's
-                  appearance and value.
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
-        <Link href="/" underline="none">
-          <Card sx={{ width: { xs: 320, sm: 380, md: 380 }, margin: "0 auto" }}>
-            {" "}
-            {/* Set width directly */}
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="220"
-                image="protection.jpg"
-                alt="Shop Review"
-                style={{ borderRadius: "5px" }}
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="div"
-                  color="primary"
-                >
-                  Paint Protection Film
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Paint Protection Film (PPF) is a transparent, durable layer
-                  applied to a vehicle's surface. It protects against scratches,
-                  stone chips, UV damage, and contaminants, preserving the
-                  paint's finish and appearance.
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
-        <Link href="/" underline="none">
-          <Card sx={{ width: { xs: 320, sm: 380, md: 380 }, margin: "0 auto" }}>
-            {" "}
-            {/* Set width directly */}
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="220"
-                image="ozone.jpg"
-                alt="Night Shopping"
-                style={{ borderRadius: "5px" }}
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="div"
-                  color="primary"
-                >
-                  Ozone Treatment
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Car ozone treatment uses ozone gas to remove odors, kill
-                  bacteria, and eliminate mold inside the vehicle. It provides
-                  deep sanitization, leaving a fresh, clean, and healthier
-                  interior environment.
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="220"
+                      image={service.image}
+                      alt={service.title}
+                      sx={{ borderTopLeftRadius: 8, borderTopRightRadius: 8 }}
+                    />
+                    <CardContent>
+                      <Typography variant="h6" color="primary" gutterBottom>
+                        {service.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {service.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Box>
+            ))}
+          </Stack>
+        ))}
       </Stack>
     </Container>
   );

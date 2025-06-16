@@ -12,19 +12,19 @@ export default function LandingTestimonial() {
       name: "Ankit Singh",
       feedback:
         "Optimus Detailing transformed my car into a brand-new vehicle. Their attention to detail is unmatched. Highly recommended!",
-      image: "owner.png",
+      image: "user.jpeg",
     },
     {
       name: "Monu Sharma",
       feedback:
         "The team at Optimus Detailing exceeded my expectations. My car looks amazing, and I couldn't be happier with the results.",
-      image: "/user2.jpg",
+      image: "/user2.jpeg",
     },
     {
       name: "Aman Kumar",
       feedback:
         "Fantastic service! The team was professional, and the results speak for themselves. Will definitely return.",
-      image: "/user3.jpg",
+      image: "/user3.jpeg",
     },
   ];
 
@@ -37,11 +37,11 @@ export default function LandingTestimonial() {
       }}
     >
       <Typography
-        variant="h4"
+        variant="h3"
         component="h2"
         textAlign="center"
         gutterBottom
-        color="primary"
+        color="success"
       >
         What Our Customers Say
       </Typography>

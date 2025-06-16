@@ -111,7 +111,7 @@ export default function Footer() {
             </Typography>
             <Stack spacing={0.5}>
               <Link color="text.secondary" href="#">
-              +91 9879876655
+              +91 8295164888
               </Link>
               <Link color="text.secondary" href="#">
                 Mail

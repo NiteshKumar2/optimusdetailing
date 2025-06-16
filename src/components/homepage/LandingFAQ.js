@@ -24,7 +24,8 @@ export default function LandingFAQ() {
         }}
       >
         <Typography
-          variant="h4"
+          variant="h3"
+          color="success"
           sx={{
             marginBottom: "33px", // Margin below heading
             textAlign: "center", // Centered heading
